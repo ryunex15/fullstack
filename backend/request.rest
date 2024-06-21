@@ -8,7 +8,7 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "Jhon Doesn't",
+    "name": "Jhon Doksli",
     "email": "jhondon@gmail.com",
     "gender": "Male"
 }
