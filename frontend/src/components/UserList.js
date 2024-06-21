@@ -9,7 +9,7 @@ useEffect(()=>{
 },[]);
 
 const getUsers = async () =>{
-    const response = await axios.get("https//localhost:5000/users");
+    const response = await axios.get(`http://localhost:5000/users`);
     setUser(response.data);
 };
 
