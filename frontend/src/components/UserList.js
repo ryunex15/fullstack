@@ -14,6 +14,15 @@ const getUsers = async () =>{
     setUser(response.data);
 };
 
+    const deleteUser = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/users/${id}`);
+            getUsers();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
   return (
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
@@ -39,7 +48,7 @@ const getUsers = async () =>{
                             <Link to={`edit/${user.id}`} className='button is-small is-info'>
                             Edit
                             </Link>
-                            <button className='button is-small is-danger'>
+                            <button onClick={()=> deleteUser(user.id)} className='button is-small is-danger'>
                             Delete
                             </button>
                         </td>
